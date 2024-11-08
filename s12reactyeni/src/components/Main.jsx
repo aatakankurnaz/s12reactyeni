@@ -56,7 +56,7 @@ export const Main = () => {
                         </nav>
                     </div>
                     <div className='grow-[1] flex justify-center mt-4 md:mt-0'>
-                        <img src="/107975 -1.JPG" alt="sds" className='h-[85%] rounded-2xl' />
+                        <img src="/107975 -1.JPG" alt="sds" className='h-[85%] rounded-2xl md:' />
                     </div>
                 </div>
             </div>
