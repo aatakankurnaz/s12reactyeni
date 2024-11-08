@@ -1,10 +1,15 @@
+import { useSelector } from "react-redux";
+import locales from "../locales";
+
 export const Skills = () => {
+    const language = useSelector((state) => state.language);
+    const locale = locales[language];
     return (
         <>
             <div className=" flex items-center justify-center  font-inter dark:bg-[#252128]">
                 <div className='w-[60%] h-[70%]  flex my-20'>
                     <div className="grow-[1]">
-                        <h1 className="font-extrabold tracking-wider text-[#4832D3] dark:text-[#CBF281]">Skills</h1>
+                        <h1 className="font-extrabold tracking-wider text-[#4832D3] dark:text-[#CBF281]">{locale.yetenek}</h1>
                     </div>
                     <div className="grow-[1] flex flex-col gap-10">
                         <div className="flex items-center gap-4">

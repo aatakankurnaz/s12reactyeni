@@ -1,6 +1,9 @@
 import Form from 'react-bootstrap/Form';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleDarkMode } from '../store/actions';
+import LanguageToggle from './LanguageToggle';
+import locales from '../locales';
+
 
 export const Main = () => {
 
@@ -12,14 +15,8 @@ export const Main = () => {
         dispatch(toggleDarkMode());
     };
 
-    const currentLanguage = useSelector((state) => state.language);
-
-
-    const getLocalizedText = (key) => {
-        return locales[currentLanguage][key];
-    };
-
-
+    const language = useSelector((state) => state.language);
+    const locale = locales[language];
     return (
         <div className="h-screen flex items-center justify-center 
                 bg-gradient-to-r from-[#4731D3] from-60% to-[#CBF281] 
@@ -29,8 +26,8 @@ export const Main = () => {
                 <header className=' h-[15%] flex justify-between items-center'>
                     <h1 className='text-[#CBF281] font-inter font-bold tracking-wider'>atakan</h1>
                     <div className='flex self-start gap-40'>
-                        <button className='font-inter font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-[#CBF281] to-gray-500 dark:from-purple-300 dark:to-gray-500
-'>TÜRKÇE'YE GEÇ</button>
+                        <LanguageToggle />
+
                         <Form>
                             <Form.Check
                                 type="switch"
@@ -45,9 +42,8 @@ export const Main = () => {
                 </header>
                 <div className='w-full h-full flex'>
                     <div className='grow-[1]  flex flex-col gap-10 justify-center'>
-                        <h1 className='text-6xl text-[#CBF281] font-inter'>I am a Frontend<br />
-                            Developer...</h1>
-                        <p className='text-3xl text-white font-inter'>...who likes to craft solid and scalable frontend <br /> products with great user experiences.</p>
+                        <h1 className='text-6xl text-[#CBF281] font-inter whitespace-pre-line'>{locale.baslik}</h1>
+                        <p className='text-3xl text-white font-inter whitespace-pre-line'>{locale.metin2}</p>
                         <nav className='flex gap-3'>
                             <a href="" className=' px-2 py-2 bg-white rounded-md flex gap-2 no-underline items-center dark:!bg-[#252128]'>
                                 <img src="/icons8-github.svg" alt="" className='w-8 h-8 hidden dark:block' />

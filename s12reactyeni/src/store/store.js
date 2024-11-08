@@ -1,6 +1,6 @@
 import { legacy_createStore as createStore } from "redux";
-import { TOGGLE_DARK_MODE } from "./actions";
-import { SET_LANGUAGE } from "./actions";
+import { SET_LANGUAGE, TOGGLE_DARK_MODE } from "./actions";
+
 
 
 export const savedDarkMode = localStorage.getItem('darkMode') === 'true';
@@ -8,7 +8,7 @@ export const savedDarkMode = localStorage.getItem('darkMode') === 'true';
 
 const initialState = {
   isDarkMode: savedDarkMode,
-  language: "tr"
+  language: "en"
 }
 
 const GlobalReducer = (state = initialState, action) => {
@@ -19,7 +19,7 @@ const GlobalReducer = (state = initialState, action) => {
       return { ...state, isDarkMode: !state.isDarkMode };
     case SET_LANGUAGE:
 
-      return { ...state, language: action.payload };
+    return { ...state, language: action.payload };
     default:
       return state;
   }
