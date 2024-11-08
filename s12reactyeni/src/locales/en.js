@@ -15,7 +15,10 @@ profil: "Profile",
     metin5: "The website called 'Technological Pizza' was created to offer a thematic\n experience such as a pizza ordering simulation or a pizza delivery process\n aimed at the digitizing food industry.\nThe site was designed to better help users understand the online food\n ordering process, providing an interactive structure for user engagement.",
     mesaj: "Send me a message",
     mesaj2: "Do you have a question or suggestion,\n or just want to say hello? Go ahead.",
-    sayfa:"View Site"
+    sayfa:"View Site",
+    kisisel:"Profile Site",
+    metin6: "Do only companies have websites? Now, everyone needs to have their\n place in the digital world of the information age. We are designing\n a website with a user-friendly interface and functionality that will be your\n new face on the internet."
+
     
   };
   

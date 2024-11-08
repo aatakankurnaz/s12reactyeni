@@ -15,6 +15,8 @@ export default {
     metin5:"Teknolojik Pizza adlı web sitesi, dijitalleşen gıda sektörüne yönelik olarak pizza siparişi\n simülasyonu veya pizza teslimat süreci gibi tematik bir deneyim sunmak amacıyla yapılmıştır.\n Kullanıcıların online yemek sipariş süreçlerini daha iyi anlamaları için hazırlananan\n sitede kullanıcı etkileşimi sağlamak adına interaktif bir yapı sağlanmıştır.",
     mesaj:"Bana mesaj gönderin",
     mesaj2:"Bir sorunuz veya öneriniz mi var,\nya da sadece merhaba demek mi istiyorsunuz? Buyurun.",
-    sayfa:"Sayfayı Gör"
+    sayfa:"Sayfayı Gör",
+    kisisel:"Profil Sitesi",
+    metin6:"Sadece şirketlerin mi siteleri olur ? Artık herkesin bilgi çağında\n internet dünyasında yerini alması gerekiyor. Kullanışlı arayüzü\n ve fonksiyonalitesi ile sizin internetteki yeni yüzünüz olacak\n bir site tasarlıyoruz."
   };
   
