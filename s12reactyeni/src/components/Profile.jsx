@@ -1,6 +1,6 @@
 export const Profile = () => {
     return (
-        <div className="h-[70vh] bg-[#4731D3] flex items-center justify-center ">
+        <div className="h-[70vh] bg-[#4731D3] flex items-center justify-center dark:bg-[#171043]">
             <div className='w-[60%] h-[70%]  flex flex-col gap-5'>
                 <h1 className="text-[#CBF281] font-Inter text-5xl font-bold">Profile</h1>
                 <div className="flex">

@@ -1,20 +1,44 @@
 import Form from 'react-bootstrap/Form';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleDarkMode } from '../store/actions';
 
 export const Main = () => {
+
+    const dispatch = useDispatch();
+    const isDarkMode = useSelector(state => state.isDarkMode);
+
+
+    const handleToggleDarkMode = () => {
+        dispatch(toggleDarkMode());
+    };
+
+    const currentLanguage = useSelector((state) => state.language);
+
+
+    const getLocalizedText = (key) => {
+        return locales[currentLanguage][key];
+    };
+
+
     return (
-        <div className="h-screen bg-gradient-to-r from-[#4731D3] from-60% to-[#CBF281] flex items-center justify-center ">
+        <div className="h-screen flex items-center justify-center 
+                bg-gradient-to-r from-[#4731D3] from-60% to-[#CBF281] 
+                dark:bg-gradient-to-r dark:from-[#171043] dark:from-60% dark:to-[#1A210B]">
             <div className='w-[60%] h-[60%] mb-[15%] '>
 
                 <header className=' h-[15%] flex justify-between items-center'>
                     <h1 className='text-[#CBF281] font-inter font-bold tracking-wider'>atakan</h1>
                     <div className='flex self-start gap-40'>
-                        <button className='text-[#CBF281] font-inter font-bold tracking-wider'>TÜRKÇE'YE GEÇ</button>
+                        <button className='font-inter font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-[#CBF281] to-gray-500 dark:from-purple-300 dark:to-gray-500
+'>TÜRKÇE'YE GEÇ</button>
                         <Form>
                             <Form.Check
                                 type="switch"
                                 id="custom-switch"
-                                label="DARK MODE"
+                                label={isDarkMode ? 'Light Mode' : 'Dark Mode'}
                                 className='text-[#4731D3] font-inter font-bold tracking-wider custom-switch'
+                                checked={isDarkMode}
+                                onChange={handleToggleDarkMode}
                             />
                         </Form>
                     </div>
@@ -24,14 +48,16 @@ export const Main = () => {
                         <h1 className='text-6xl text-[#CBF281] font-inter'>I am a Frontend<br />
                             Developer...</h1>
                         <p className='text-3xl text-white font-inter'>...who likes to craft solid and scalable frontend <br /> products with great user experiences.</p>
-                        <nav className='flex gap-3'> 
-                            <a href="" className=' px-2 py-2 bg-white rounded-md flex gap-2 no-underline items-center'>
-                                <img src="/github-mark.png" alt="" className='w-8 h-8'/>
-                                <p className='m-0 font-inter  text-[#3730A3]'>Github</p>
+                        <nav className='flex gap-3'>
+                            <a href="" className=' px-2 py-2 bg-white rounded-md flex gap-2 no-underline items-center dark:!bg-[#252128]'>
+                                <img src="/icons8-github.svg" alt="" className='w-8 h-8 hidden dark:block' />
+                                <img src="/github-mark.png" alt="" className='w-8 h-8 block dark:hidden' />
+                                <p className='m-0 font-inter  text-[#3730A3] dark:text-white'>Github</p>
                             </a>
-                            <a href="" className=' px-2 py-2 bg-white rounded-md flex gap-2 no-underline items-center'>
-                                <img src="/LI-In-Bug.png" alt="" className='w-8 h-8'/>
-                                <p className='m-0 font-inter  text-[#3730A3]'>Linkedin</p>
+                            <a href="" className=' px-2 py-2 bg-white rounded-md flex gap-2 no-underline items-center dark:!bg-[#252128]'>
+                                <img src="/icons8-linkedin.svg" alt="" className='w-8 h-8 hidden dark:block' />
+                                <img src="/LI-In-Bug.png" alt="" className='w-8 h-8 block dark:hidden' />
+                                <p className='m-0 font-inter  text-[#3730A3] dark:text-white'>Linkedin</p>
                             </a>
 
                         </nav>
